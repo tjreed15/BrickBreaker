@@ -1,0 +1,262 @@
+width:100 height:500 direction:0 paddleWidth:30 paddleHeight:10 xSep:10 ySep:10 defaultWidth:1 defaultHeight:1  X:-1 Y:-1 pauseTime:50
+[X: Y: width: height: health: points:]
+(X: Y: radius: health: xVel: yVel:)
+{X: width: height: minY: maxY: defaultY: health:}
+<width: height: centerX: centerY: pathX: pathY:  X: Y: pathXDist: pathYDist: velocity: health:>
+
+Power Ups
+	Pin Ball
+	
+Fix-Ups
+	Frozen Paddle = Frozen animation
+	Pac Man Kill = ghost fade out
+	
+	
+Learning Levels
+	Rainbow -> Gold Coins
+	Bomb -> Explode
+	Baseball Glove -> Catching Balls
+	Bike -> Multiple Balls (Lance Armstrong)
+	Viagra -> Extend Paddle
+	Shield -> Shield
+	-> Multiple Paddle
+	Dick -> Bullets
+	-> Big Ball
+	-> Small Ball
+	Super Man -> Invinsible
+	
+	
+	
+	
+	// START PAUSEMENU
+package menu;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.geom.Rectangle2D;
+import java.util.LinkedList;
+import javax.swing.*;
+
+public class PauseMenu extends JPanel implements MouseListener{
+
+	private static final long serialVersionUID = 1L;
+	private LinkedList<PauseMenuOption> options;
+	public enum PauseSelection{CONTINUE, QUIT}
+
+	public PauseMenu(){
+        super();
+        options = new LinkedList<PauseMenuOption>();
+        addMouseListener(this);   
+	}
+	
+	public void addOption(String title, PauseSelection selection){
+		PauseMenuOption toAdd = new PauseMenuOption();
+		toAdd.setValue(title, selection);
+		options.add(toAdd);
+	}
+	
+	public int open(){
+		JFrame frame = new JFrame("Paused");
+		System.out.println("created!");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		System.out.println("exit-enabled!");
+		frame.setAlwaysOnTop(true);
+		System.out.println("on top!");
+		frame.setSize(WINDOW_WIDTH,WINDOW_HEIGHT);
+		System.out.println("sized!");
+		int width = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+		int height = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+		
+		frame.setLocation((width-frame.getWidth())/2, (height-frame.getHeight())/2);
+		System.out.println("located!");
+		frame.setContentPane(this);
+		System.out.println("panel added!");
+//		this.setBounds(0, 0, width, height);
+		frame.setVisible(true);
+		System.out.println("visible!");
+		frame.repaint();
+		System.out.println("painted!");
+        
+		while(true){
+			if(!frame.isShowing()){
+				System.out.println("NOW!");
+				return 0;
+			}
+		}
+	}
+	private static final int WINDOW_WIDTH = 500; 
+	private static final int WINDOW_HEIGHT = 500; 
+	private static final double OPTION_WIDTH_RATIO = .75;
+	private static final int MAX_NOPTIONS = 5;
+	private static final double OPTION_SEP_RATIO = .05;
+	private static final double OPTION_HEIGHT_RATIO = 1.0/MAX_NOPTIONS - OPTION_SEP_RATIO;
+	private static final Color BACKGROUND_COLOR = Color.black;
+	
+	public void paint(Graphics g){
+		System.out.println("Paint");
+		paintComponent(g);
+	}
+	
+    public void paintComponent(Graphics g){
+    	try{throw new Exception();}catch(Exception e){e.printStackTrace(); System.exit(0);}
+    	super.paintComponents(g);
+    	System.out.println("painting");
+    	Graphics2D g2 = (Graphics2D)g;
+    	Rectangle2D background = new Rectangle2D.Double(0, 0, (int)g.getClipBounds().getWidth(), (int)g.getClipBounds().getHeight());
+    	g2.setPaint(new GradientPaint(0, 0, BACKGROUND_COLOR, (int)background.getBounds().getWidth(), 0, BACKGROUND_COLOR));
+    	g2.fill(background);
+
+    	for(int i = 0; i<options.size(); i++){
+    		options.get(i).setSize(OPTION_WIDTH_RATIO*g2.getClipBounds().getWidth(), 
+    				OPTION_HEIGHT_RATIO*g2.getClipBounds().getHeight());
+    		options.get(i).setLocation((g2.getClipBounds().getWidth()-options.get(i).getWidth())/2,
+    				i*(g2.getClipBounds().getHeight()-options.get(i).getHeight())/MAX_NOPTIONS+ 
+    				(i+1)*OPTION_SEP_RATIO*g2.getClipBounds().getHeight());
+    		options.get(i).paintComponent(g2);
+    	}
+    	
+    	/**
+    	for(int i = 0; i<options.size(); i++){
+    		Rectangle2D option = new Rectangle((background.getBounds().getWidth()*(1-OPTION_WIDTH_RATIO))/2, 
+    				i*(background.getBounds().getHeight())/(OPTION_HEIGHT_RATIO*OPTION_HEIGHT), 
+    				OPTION_WIDTH_RATIO*background.getBounds().getWidth(), 
+    				OPTION_HEIGHT_RATIO*background.getBounds().getHeight());
+    		
+    		GradientPaint redToWhite = new GradientPaint(0, 0, Color.RED, OPTION_WIDTH, 0, Color.LIGHT_GRAY);
+    		g2.setPaint(redToWhite);
+    		g2.fillRect(OPTION_X, OPTION_Y+(i*(OPTION_HEIGHT+OPTION_SEP)), OPTION_WIDTH, OPTION_HEIGHT);
+    		redToWhite = new GradientPaint(0, 0, Color.BLACK, OPTION_WIDTH, 0, Color.BLACK);
+    		g2.setPaint(redToWhite);
+    		g2.drawString(options.get(i).toString(), OPTION_X+STRING_X, 
+    				OPTION_Y+(i*(OPTION_HEIGHT+OPTION_SEP))+(OPTION_HEIGHT-STRING_HEIGHT)/2+STRING_HEIGHT);
+//    		g2.fill(new Ellipse2D.Double(0, 0, 100, 50));
+    	}
+    */	
+    }
+
+    public void mousePressed(MouseEvent mouse){
+    	for(int i = 0; i<options.size(); i++){
+    		if(options.get(i).contains(mouse.getX(), mouse.getY())){
+    			System.out.println(options.get(i));
+    			break;
+    		}
+    	}
+    }
+   
+
+/* The following methods have to be here to comply
+   with the MouseListener interface, but we don't
+   use them, so their code blocks are empty. */
+    public void mouseEntered(MouseEvent mouse){ }   
+    public void mouseExited(MouseEvent mouse){ }
+    public void mouseClicked(MouseEvent mouse){ }
+	public void mouseReleased(MouseEvent mouse){ }
+    
+    
+    public static void main(String arg[]){
+    	PauseMenu pause = new PauseMenu();
+    	pause.addOption("Quit", PauseSelection.QUIT);
+		pause.addOption("Continue", PauseSelection.CONTINUE);
+//		pause.setDelegate(this);
+    	pause.open();
+    }
+}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// START PAUSEMENUOPTION
+package menu;
+
+import java.awt.Color;
+import java.awt.GradientPaint;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.geom.Rectangle2D;
+
+import menu.PauseMenu.PauseSelection;
+
+public class PauseMenuOption {
+
+	private String title;
+	private PauseSelection selection;
+	private double x, y, width, height;
+	
+	public PauseMenuOption(){
+		x = y = width = height = 0;
+	}
+	
+	public String toString(){
+		return title;
+	}
+	
+	public void setValue(String title, PauseSelection selection){
+		this.selection = selection;
+		this.title = title;
+	}
+	
+	public boolean contains(double x, double y){
+		boolean toReturn = x>this.x && x<this.x+width;
+		return toReturn && y>this.y && y<this.y+height;
+	}
+	
+	public PauseSelection select(){
+		return selection;
+	}
+	
+	public void setLocation(double x, double y){
+		this.x = x;
+		this.y = y;
+	}
+	
+	public void setSize(double width, double height){
+		this.width = width;
+		this.height = height;
+	}
+	
+	public double getWidth(){
+		return width;
+	}
+	
+	public double getHeight(){
+		return height;
+	}
+	
+	
+	
+	
+	public void paintComponent(Graphics2D g2){
+		Rectangle2D option = new Rectangle((int)x, (int)y, (int)width, (int)height);
+		GradientPaint redToWhite = new GradientPaint(0, 0, Color.RED, (int)width, 0, Color.LIGHT_GRAY);
+		g2.setPaint(redToWhite);
+		g2.fill(option);
+		GradientPaint black  = new GradientPaint(0, 0, Color.BLACK, (int)width, 0, Color.BLACK);
+		g2.setPaint(black);
+		g2.drawString(title, (int)(x+STRING_X), 
+				(int)(y+(height-STRING_HEIGHT)/2+STRING_HEIGHT));
+	}
+	
+
+	private static final int STRING_X = 10;
+	private static final int STRING_HEIGHT = 12;
+	
+	
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		

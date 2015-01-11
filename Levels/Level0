@@ -1,0 +1,23 @@
+// defaultWidth:50 defaultHeight:10 width:550 height:660 xSep:10 ySep:10
+
+[points:-1]	[points:-1]	[points:1]	[height:310 points:1]	[points:1]	[height:310 points:1]	[points:1]
+
+[points:-1]	[points:-1]	[points:-1]	[points:-1]	(ballRadius:5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+[points:-1]	[points:1 width:200 height:200]	[points:-1]	[points:-1]	[points:-1]	[points:1 width:200 height:200]
+
+
+
+[points:-1]	{}

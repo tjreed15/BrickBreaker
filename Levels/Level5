@@ -1,0 +1,13 @@
+width:402.0 height:500.0 X:198.0 Y:120.0 pauseTime:50
+[X:102.0 Y:27.0 width:50.0 height:10.0 health:1 points:0]
+[X:314.0 Y:29.0 width:50.0 height:10.0 health:1 points:3]
+[X:801.0 Y:431.0 width:50.0 height:10.0 health:1 points:0]
+[X:886.0 Y:430.0 width:50.0 height:10.0 health:1 points:0]
+[X:844.0 Y:312.0 width:50.0 height:10.0 health:1 points:0]
+{X:193.0 defaultY:380.0 width:76.0 height:16.0 maxY:1.0 minY:0.0 health:2}
+(X:218.0 Y:175.0 radius:12.0 xVel:0.0 yVel:0.0 health:5)
+(X:105.0 Y:163.0 radius:12.0 xVel:0.0 yVel:0.0 health:-1)
+(X:847.0 Y:49.0 radius:12.0 xVel:0.0 yVel:0.0 health:-1)
+(X:485.0 Y:201.0 radius:12.0 xVel:0.0 yVel:0.0 health:-1)
+(X:438.0 Y:167.0 radius:12.0 xVel:0.0 yVel:0.0 health:-1)
+(X:848.0 Y:364.0 radius:12.0 xVel:0.0 yVel:0.0 health:-1)

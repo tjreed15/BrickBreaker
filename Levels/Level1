@@ -1,0 +1,36 @@
+// defaultWidth:50 defaultHeight:10 width:550 height:660 paddleY:630 xSep:10 ySep:10
+
+[points:-1]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:4]	[points:4]	[points:4]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4] 	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]
+[points:4]	[points:4]	[points:4]	[points:4]	[points:4]	[points:4]	[points:4]	[points:4]	[points:4]
+[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]
+[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]
+[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]	[points:-1]	[points:-1]	[points:-1]	[points:4]
+[points:4]	[points:4]	[points:4]	[points:4]	[points:4]	[points:4]	[points:4]	[points:4]	[points:4]
+
+
+
+
+(X:-1 xVel:5 yVel:-10){}
+//<X:200 Y:500 pathXDist:100 pathYDist:0 pathXDist:-100 pathYDist:0 points:1>	
+<width:200 height:20 X:0 Y:0 pathXDist:0 pathYDist:300 pathXDist:0 pathYDist:-300 points:4>	
+<width:200 height:20 X:0 Y:50 pathXDist:0 pathYDist:300 pathXDist:0 pathYDist:-300 points:4>
+<width:200 height:20 X:0 Y:100 pathXDist:0 pathYDist:300 pathXDist:0 pathYDist:-300 points:4>
+<width:200 height:20 X:0 Y:150 pathXDist:0 pathYDist:300 pathXDist:0 pathYDist:-300 points:4>
+<width:50 height:170 X:0 Y:0 pathXDist:0 pathYDist:300 pathXDist:0 pathYDist:-300 points:4>	

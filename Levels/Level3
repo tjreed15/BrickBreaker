@@ -1,0 +1,5 @@
+//width:400 height:500 X:483 Y:93 pauseTime:50
+[X:171 Y:38 width:55 height:10 health:1 points:0]
+[X:175 Y:438 width:50 height:10 health:1 points:0]
+{X:161 defaultY:355 width:75 height:15 maxY:570 minY:0 health:-1}
+(X:181 Y:117 radius:12 health:-1)
